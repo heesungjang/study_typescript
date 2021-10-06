@@ -15,7 +15,7 @@
     // TypeScript
     // enum에 값을 할당하지 않으면 index 처리로 값이 설정된다
 
-    enum DAYS {
+    enum DAYS_OF_ENUM {
         Monday = "monday",
         Tuesday = "monday",
         Wednesday = "monday",
@@ -24,6 +24,17 @@
         Saturday = "monday",
         Sunday = "monday",
     }
-    console.log(DAYS.Monday);
-    console.log(DAYS.Saturday);
+    console.log(DAYS_OF_ENUM.Monday);
+    console.log(DAYS_OF_ENUM.Saturday);
+
+    type DAYS_OF_UNION =
+        | "Monday"
+        | "Tuesday"
+        | "Wednesday"
+        | "Thursday"
+        | "FriDay";
+
+    let dayOfWeek: DAYS_OF_UNION = "Monday";
+    dayOfWeek = "Thursday";
+    console.log(dayOfWeek);
 }
