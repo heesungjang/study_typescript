@@ -14,14 +14,15 @@
 
     // TypeScript
     // enum에 값을 할당하지 않으면 index 처리로 값이 설정된다
+
     enum DAYS {
-        Monday,
-        Tuesday,
-        Wednesday,
-        Thursday,
-        Friday,
-        Saturday,
-        Sunday,
+        Monday = "monday",
+        Tuesday = "monday",
+        Wednesday = "monday",
+        Thursday = "monday",
+        Friday = "monday",
+        Saturday = "monday",
+        Sunday = "monday",
     }
     console.log(DAYS.Monday);
     console.log(DAYS.Saturday);
