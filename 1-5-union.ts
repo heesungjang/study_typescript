@@ -15,29 +15,29 @@
     const tile: TileSize = 8;
 
     // function: login --> success or fail
-    type Success = {
-        response: {
-            body: string;
-        };
-    };
-    type Fail = {
-        reason: string;
-    };
-    type LoginState = Success | Fail;
+    // type Success = {
+    //     response: {
+    //         body: string;
+    //     };
+    // };
+    // type Fail = {
+    //     reason: string;
+    // };
+    // type LoginState = Success | Fail;
 
-    function login(): LoginState {
-        return {
-            response: {
-                body: "logged in!",
-            },
-        };
-    }
+    // function login(): LoginState {
+    //     return {
+    //         response: {
+    //             body: "logged in!",
+    //         },
+    //     };
+    // }
 
-    function printLoginState(state: LoginState) {
-        if ("response" in state) {
-            console.log(state.response.body);
-        } else {
-            console.log(state.reason);
-        }
-    }
+    // function printLoginState(state: LoginState) {
+    //     if ("response" in state) {
+    //         console.log(state.response.body);
+    //     } else {
+    //         console.log(state.reason);
+    //     }
+    // }
 }
