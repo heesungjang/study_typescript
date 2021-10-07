@@ -36,4 +36,21 @@ zion.workParkTime();
 const bobAfterPay = payGood(bob);
 const zionAfterPay = payGood(zion);
 
-bobAfterPay.workFullTime();
+//------------------------------------//
+
+const obj = {
+    name: "zion",
+    age: 20,
+};
+
+const obj2 = {
+    animal: "🐈",
+};
+
+function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {
+    return obj[key];
+}
+
+console.log(getValue(obj, "name")); // zion 출력
+console.log(getValue(obj, "age")); // 20 출력
+console.log(getValue(obj2, "animal")); // 고양이 출력
