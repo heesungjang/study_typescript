@@ -33,4 +33,7 @@
     console.log(boal);
     console.log(resultGood);
     console.log(resultBad);
+
+    let changeThis = checkNotNullGood(123);
+    // changeThis = "heelo"; // <--- 위에서 넘버로 정해졌기 때문에 문자열 지정이 불가능함
 }
