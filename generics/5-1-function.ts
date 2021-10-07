@@ -27,8 +27,8 @@
 
     const result = checkNotNull(123);
     const resultBad: string = checkNotNullBad(123);
-    const resultGood: string = checkNotNullGood(123);
-    const boal: string = checkNotNullGood(true);
+    const resultGood = checkNotNullGood(123);
+    const boal = checkNotNullGood(true);
     console.log(result);
     console.log(boal);
     console.log(resultGood);
