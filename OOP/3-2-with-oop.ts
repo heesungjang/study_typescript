@@ -15,6 +15,10 @@
             this.coffeeBeans = coffeeBeans;
         }
 
+        static makeMachine(coffeeBeans: number) {
+            return new CoffeeMaker(coffeeBeans);
+        }
+
         // 커피 내리는 함수 작성
         makeCoffee(shots: number): CoffeeCup {
             if (this.coffeeBeans < shots * CoffeeMaker.BEANS_GRAMM_PER_SHOT) {
