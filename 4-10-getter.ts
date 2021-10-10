@@ -1,20 +1,25 @@
-class User {
-    firstName: string;
-    lastName: string;
-    get fullName(): string {
-        return `${this.firstName}, ${this.lastName}`;
+{
+    class User {
+        get fullName(): string {
+            return `${this.firstName}, ${this.lastName}`;
+        }
+
+        private internalAge = 4;
+
+        get age(): number {
+            return this.internalAge;
+        }
+
+        set age(num: number) {
+            this.internalAge = num;
+        }
+
+        constructor(private firstName: string, private lastName: string) {}
     }
 
-    constructor(firstName: string, lastName: string) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+    const user = new User("heesung", "jang");
+
+    user.age = 6;
+
+    console.log(user.fullName);
 }
-
-const user = new User("heesung", "jang");
-
-console.log(user.fullName);
-
-user.firstName = "zion";
-
-console.log(user.fullName);
