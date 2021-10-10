@@ -1,12 +1,39 @@
 /**
  * Let's make a game 🕹
  */
-console.log(position); // { x: 0, y: 0}
-move('up');
-console.log(position); // { x: 0, y: 1}
-move('down');
-console.log(position); // { x: 0, y: 0}
-move('left');
-console.log(position); // { x: -1, y: 0}
-move('right');
-console.log(position); // { x: 0, y: 0}
+
+type Command = "up" | "down" | "left" | "right";
+class Board {
+    x = 0;
+    y = 0;
+
+    current_position(): number[] {
+        return [this.x, this.y];
+    }
+
+    move(command: Command) {
+        switch (command) {
+            case "up":
+                this.y += 1;
+                break;
+            case "down":
+                this.y - +1;
+                break;
+            case "right":
+                this.x += 1;
+                break;
+            case "left":
+                this.y += 1;
+                break;
+            default:
+                throw new Error("Unknown operation command");
+        }
+    }
+}
+
+const new_board = new Board();
+console.log(new_board.current_position());
+new_board.move("up");
+console.log(new_board.current_position());
+new_board.move("right");
+console.log(new_board.current_position());
