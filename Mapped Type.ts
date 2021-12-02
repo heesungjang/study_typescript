@@ -26,3 +26,19 @@ console.log(result); // ['함수', '변수', '인자'];
     Capt: 33,
   };
 }
+
+{
+  type Subset<T> = {
+    [K in keyof T]?: T[K];
+  };
+
+  interface Person {
+    age: number;
+    name: string;
+  }
+
+  const ageOnly: Subset<Person> = { age: 23 };
+  const nameOnly: Subset<Person> = { name: "Tony" };
+  const ironman: Subset<Person> = { age: 23, name: "Tony" };
+  const empty: Subset<Person> = {};
+}
