@@ -1,7 +1,31 @@
 {
-  // 함수나 컴포넌트를 재사용할때 타입이 하나도 정해지면 동적으로
-  // 여러가지 타입에 대응하는 컴포넌트 또는 함수를 만들기 힘듬.
   const getText = (text: string): string => text;
 
   console.log(getText("Hello, World"));
+
+  const genericGetText = <T>(text: T): T => text;
+
+  console.log(genericGetText<string>("hi"));
+  console.log(genericGetText<number>(123));
+
+  const logText = (text: string): string => text;
+
+  ❌
+  const notCoolLogText = (text:any): any => text
+
+  const coolLogText = <T>(text:T):T => text;
+
+  
+// #1
+const text1 = coolLogText<string>("Hello Generic");
+// #2
+const text2 = coolLogText("Hello Generic");
+
+
+function longLogText<T>(text: T[]): T[] {
+    console.log(text.length); // 제네릭 타입이 배열이기 때문에 `length`를 허용합니다.
+    return text;
+  }
+
+  console.log(longLogText(["a",'s','d',"f"]))
 }
